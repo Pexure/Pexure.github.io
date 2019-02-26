@@ -239,6 +239,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/string-and-file-funcs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pexure">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pexure's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/26/string-and-file-funcs/" itemprop="url">string and file funcs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T20:02:21+08:00">
+                2019-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>字符串相关函数:<br>strcpy(dest,src)<br>//将src拷贝到dest</p>
+<p>strncpy(dest,src,num)<br>//将src前num个字符拷贝到dest</p>
+<p>strcmp(s1,s2)<br>//s1==s2时返回0，s1 &gt; s2时返回整数，s1 &lt; s2时返回负数 (字典序,ASCII码大小)</p>
+<p>strcat(dest,src)<br>//将src接到dest后面，注意dest的结束符会被去掉</p>
+<p>strncat(dest,src,num)<br>//将src的前num个字符接到dest后面</p>
+<p>其他可能比较有用的：<br>strchr(const char *string, int c)//s1中查找c<br>strstr(s1,s2)//在s1中查找子串s2</p>
+<p>另外，将字符串指针作为函数的实参，定义为 f(char **s)，调用需要传入指针的地址 f(&amp;s)，具体的还有待实验和补充</p>
+<p>文件相关函数：<br>FILE *fp=fopen(addr,”r”/“w”/“a”/…) //分别是read only,新建或清空,新建或附加…<br>fscanf(fp,””,…)<br>fprintf(fp,””,…)<br>别忘了fclose(fp)</p>
+<p>文件中search的代码格式：<br>fscanf(fp,”%s”,s);<br>while (!feof(fp)){<br>    …<br>    fscanf(fp,”%s”,s);<br>}</p>
+<p>还有今天刚了解的用于search目录下文件的：<br>结构体 _finddata_t  //这个linux的C语言好像不太好用 头文件io.h<br>结构体DIR,dirent,stat  函数opendir,readdir,closedir</p>
+<p>待补充…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/19-02-26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -498,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Summary-today/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/19-02-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pexure">
@@ -517,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/25/Summary-today/" itemprop="url">今日小结</a></h1>
+                <a class="post-title-link" href="/2019/02/25/19-02-25/" itemprop="url">今日小结</a></h1>
         
 
         <div class="post-meta">
@@ -900,7 +1030,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -913,7 +1043,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
