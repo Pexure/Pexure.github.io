@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="滚动数组,算法竞赛,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pexure&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/02/index.html">
+<meta name="description" content="经典的滚动数组: 一维 f[M]0/1背包 （第二维从大到小）完全背包 （第二维从小到大） 常见滚动数组： 一维*2 f[2][M] 首先不管怎样，强烈建议先写出非滚动数组的版本，再改成滚动数组，因为这涉及初始化和更新的很多细节 若不滚动时需要初始化为INF，需要考虑滚动后的值已经不是INF，参见bzoj 1222若是涉及计数（累加，+=），则f[cur][j]在循环结束时需要设为0，有道这样的题">
+<meta name="keywords" content="滚动数组,算法竞赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于滚动数组">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/关于滚动数组/index.html">
 <meta property="og:site_name" content="Pexure&#39;s Blog">
+<meta property="og:description" content="经典的滚动数组: 一维 f[M]0/1背包 （第二维从大到小）完全背包 （第二维从小到大） 常见滚动数组： 一维*2 f[2][M] 首先不管怎样，强烈建议先写出非滚动数组的版本，再改成滚动数组，因为这涉及初始化和更新的很多细节 若不滚动时需要初始化为INF，需要考虑滚动后的值已经不是INF，参见bzoj 1222若是涉及计数（累加，+=），则f[cur][j]在循环结束时需要设为0，有道这样的题">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-27T12:50:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pexure&#39;s Blog">
+<meta name="twitter:title" content="关于滚动数组">
+<meta name="twitter:description" content="经典的滚动数组: 一维 f[M]0/1背包 （第二维从大到小）完全背包 （第二维从小到大） 常见滚动数组： 一维*2 f[2][M] 首先不管怎样，强烈建议先写出非滚动数组的版本，再改成滚动数组，因为这涉及初始化和更新的很多细节 若不滚动时需要初始化为INF，需要考虑滚动后的值已经不是INF，参见bzoj 1222若是涉及计数（累加，+=），则f[cur][j]在循环结束时需要设为0，有道这样的题">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/02/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/关于滚动数组/">
 
 
 
 
 
-  <title>归档 | Pexure's Blog</title>
+  <title>关于滚动数组 | Pexure's Blog</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,352 +229,158 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/关于滚动数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pexure">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pexure's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">关于滚动数组</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T20:39:40+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 9 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/27/bzoj-1222/" itemprop="url">
-              
-                <span itemprop="name">bzoj 1222</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-27T20:49:32+08:00" content="2019-02-27">
-          02-27
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/27/关于滚动数组/" itemprop="url">
-              
-                <span itemprop="name">关于滚动数组</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-27T20:39:40+08:00" content="2019-02-27">
-          02-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/27/bzoj-1499/" itemprop="url">
-              
-                <span itemprop="name">bzoj 1499</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-27T18:02:59+08:00" content="2019-02-27">
-          02-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>经典的滚动数组: 一维 f[M]<br>0/1背包 （第二维从大到小）<br>完全背包 （第二维从小到大）</p>
+<p>常见滚动数组： 一维*2 f[2][M]</p>
+<p>首先不管怎样，强烈建议先写出非滚动数组的版本，再改成滚动数组，因为这涉及初始化和更新的很多细节</p>
+<p>若不滚动时需要初始化为INF，需要考虑滚动后的值已经不是INF，参见bzoj 1222<br>若是涉及计数（累加，+=），则f[cur][j]在循环结束时需要设为0，有道这样的题，整理时再补充</p>
+<p>滚动数组有时更快是因为cache的工作原理</p>
+<p>其他待补充…</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/26/string-and-file-funcs/" itemprop="url">
-              
-                <span itemprop="name">string and file funcs</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T20:02:21+08:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/26/19-02-26/" itemprop="url">
-              
-                <span itemprop="name">今日小结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T19:19:22+08:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/25/final-exam-explanation/" itemprop="url">
-              
-                <span itemprop="name">最后一次问求期末卷讲解（应该是</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T19:14:40+08:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/25/19-02-25/" itemprop="url">
-              
-                <span itemprop="name">今日小结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T18:53:05+08:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/23/Hello-hexo/" itemprop="url">
-              
-                <span itemprop="name">开天辟地</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-23T10:05:14+08:00" content="2019-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/23/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-23T09:07:31+08:00" content="2019-02-23">
-          02-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/滚动数组/" rel="tag"># 滚动数组</a>
+          
+            <a href="/tags/算法竞赛/" rel="tag"># 算法竞赛</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/27/bzoj-1499/" rel="next" title="bzoj 1499">
+                <i class="fa fa-chevron-left"></i> bzoj 1499
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/27/bzoj-1222/" rel="prev" title="bzoj 1222">
+                bzoj 1222 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -577,6 +388,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -789,6 +604,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
