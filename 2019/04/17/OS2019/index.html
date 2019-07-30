@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Daily Summary,">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问求和OS还真是硬核啊…一天没上课就在搞这两门，从早肝到晚也可能是我太菜了…理解线性规划的对偶费了好半天，写个pstree又写了好半天…总结一下关于字符串和文件相关的函数吧，用到的时候感觉很不熟悉 以后白天肝硬核的课，晚上就英语和oj，这样的模式感觉比较好">
-<meta name="keywords" content="Daily Summary">
+<meta name="description" content="第二部分 并发 1.互斥/锁evaluation:1)mutual exclusion2)fairness3)performance 原子交换 //应该叫原子赋值atomic_xchg(ptr,newval){ //also called test-and-set    tmp=ptr;    *ptr=newval;    return tmp;} atomic_xchg版自旋锁void loc">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今日小结">
-<meta property="og:url" content="http://yoursite.com/2019/02/26/19-02-26/index.html">
+<meta property="og:title" content="OS2019">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/OS2019/index.html">
 <meta property="og:site_name" content="Pexure&#39;s Blog">
-<meta property="og:description" content="问求和OS还真是硬核啊…一天没上课就在搞这两门，从早肝到晚也可能是我太菜了…理解线性规划的对偶费了好半天，写个pstree又写了好半天…总结一下关于字符串和文件相关的函数吧，用到的时候感觉很不熟悉 以后白天肝硬核的课，晚上就英语和oj，这样的模式感觉比较好">
+<meta property="og:description" content="第二部分 并发 1.互斥/锁evaluation:1)mutual exclusion2)fairness3)performance 原子交换 //应该叫原子赋值atomic_xchg(ptr,newval){ //also called test-and-set    tmp=ptr;    *ptr=newval;    return tmp;} atomic_xchg版自旋锁void loc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-27T13:26:56.000Z">
+<meta property="og:updated_time" content="2019-06-22T06:58:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今日小结">
-<meta name="twitter:description" content="问求和OS还真是硬核啊…一天没上课就在搞这两门，从早肝到晚也可能是我太菜了…理解线性规划的对偶费了好半天，写个pstree又写了好半天…总结一下关于字符串和文件相关的函数吧，用到的时候感觉很不熟悉 以后白天肝硬核的课，晚上就英语和oj，这样的模式感觉比较好">
+<meta name="twitter:title" content="OS2019">
+<meta name="twitter:description" content="第二部分 并发 1.互斥/锁evaluation:1)mutual exclusion2)fairness3)performance 原子交换 //应该叫原子赋值atomic_xchg(ptr,newval){ //also called test-and-set    tmp=ptr;    *ptr=newval;    return tmp;} atomic_xchg版自旋锁void loc">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/26/19-02-26/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/OS2019/">
 
 
 
 
 
-  <title>今日小结 | Pexure's Blog</title>
+  <title>OS2019 | Pexure's Blog</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/19-02-26/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/OS2019/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pexure">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">今日小结</h1>
+          <h1 class="post-title" itemprop="name headline">OS2019</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T19:19:22+08:00">
-                2019-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T16:01:48+08:00">
+                2019-04-17
               </time>
             
 
@@ -310,8 +310,43 @@
       
 
       
-        <p>问求和OS还真是硬核啊…<br>一天没上课就在搞这两门，从早肝到晚<br>也可能是我太菜了…<br>理解线性规划的对偶费了好半天，写个pstree又写了好半天…<br>总结一下关于字符串和文件相关的函数吧，用到的时候感觉很不熟悉</p>
-<p>以后白天肝硬核的课，晚上就英语和oj，这样的模式感觉比较好</p>
+        <p>第二部分 并发</p>
+<p>1.互斥/锁<br>evaluation:<br>1)mutual exclusion<br>2)fairness<br>3)performance</p>
+<p>原子交换 //应该叫原子赋值<br>atomic_xchg(<em>ptr,newval){ //also called test-and-set<br>    tmp=</em>ptr;<br>    *ptr=newval;<br>    return tmp;<br>}</p>
+<p>atomic_xchg版自旋锁<br>void lock(lock_t <em>lk) {<br>  while (atomic_xchg(&amp;lk-&gt;locked, 1)) ;<br>}<br>void unlock(lock_t </em>lk) {<br>  atomic_xchg(&amp;lk-&gt;locked, 0);<br>}</p>
+<p>LL/SC  //load-linked and store-conditional<br>int LoadLinked(int <em>ptr) {<br>    make some mark();<br>    return </em>ptr;<br>}</p>
+<p>int StoreConditional(int <em>ptr, int value) {<br>    if (no one has updated </em>ptr since the LoadLinked to this address) {<br>        *ptr = value;<br>        return 1;   //success!<br>    }<br>    else return 0;   //failed to update<br>}</p>
+<p>LL/SC版自旋锁<br>void lock(lock_t <em>lock){<br>    while ( LoadLinked(&amp;lock-&gt;flag) || !StoreConditional(&amp;lock-&gt;flag,1); // spin<br>}<br>void unlock(lock_t </em>lock) {<br>    lock-&gt;flag = 0;<br>}</p>
+<p>自旋锁缺陷：<br>1.fairness: starvation<br>2.performance: too much spin</p>
+<p>改进：使用yield()+队列  所谓的互斥锁吧（锁都是互斥的照他意思自旋就不互斥了？<br>void mutex_lock(spinlock_t *lk) {<br>  if (lk-&gt;locked != 0) {<br>    enqueue(lk-&gt;wait_list);<br>    set_sleep_flag(); // 使操作系统之后不再调度当前线程<br>    spin_unlock(&amp;lk-&gt;spinlock);<br>    yield(); // 主动切换到其他线程执行<br>  } else {<br>    lk-&gt;locked = 1;<br>  }<br>}<br>void mutex_unlock() {<br>  if (!empty(lk-&gt;wait_list)) {<br>    resume(dequeue(lk-&gt;wait_list)); // 唤醒之前睡眠的线程<br>  } else {<br>    lk-&gt;locked = 0;<br>  }<br>}</p>
+<ol start="2">
+<li>并发<br>条件变量(CV:conditinal variable)<br>API:<br>int pthread_cond_wait(pthread_cond_t <em>cond, pthread_mutex_t </em>mutex);    // 调用时unlock, 然后睡眠(wait for a condition), 返回时re-acquire the lock.<br>int pthread_cond_broadcast(pthread_cond_t <em>cond);   // Unblock all threads currently blocked on the specified condition variable.<br>int pthread_cond_signal(pthread_cond_t </em>cond);   // Unblock at least one of the threads blocked on the specified condition variable.</li>
+</ol>
+<p>//example<br>int done = 0; //important<br>pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;<br>pthread_cond_t c = PTHREAD_COND_INITIALIZER;</p>
+<p>void thr_exit() {<br>    Pthread_mutex_lock(&amp;m);<br>    done = 1;<br>    Pthread_cond_signal(&amp;c);<br>    Pthread_mutex_unlock(&amp;m);<br>}</p>
+<p>void <em>child(void </em>arg) {<br>    printf(“child\n”);<br>    thr_exit();<br>    return NULL;<br>}</p>
+<p>void thr_join() {<br>    Pthread_mutex_lock(&amp;m);<br>    while (done == 0)<br>        Pthread_cond_wait(&amp;c, &amp;m);<br>    Pthread_mutex_unlock(&amp;m);<br>}</p>
+<p>int main(int argc, char *argv[]) {<br>    printf(“parent: begin\n”);<br>    pthread_t p;<br>    Pthread_create(&amp;p, NULL, child, NULL);<br>    thr_join();<br>    printf(“parent: end\n”);<br>    return 0;<br>}</p>
+<p>Tip:<br>1)always hold the lock when calling signal() or wait()<br>2)always use while loops</p>
+<p>多消费者/生产者问题 correct solution<br>int buffer[MAX];<br>int fill_ptr = 0;<br>int use_ptr = 0;<br>int count = 0;</p>
+<p>void put(int value) {<br>    buffer[fill_ptr] = value;<br>    fill_ptr = (fill_ptr + 1) % MAX;<br>    count++;<br>}</p>
+<p>int get() {<br>    int tmp = buffer[use_ptr];<br>    use_ptr = (use_ptr + 1) % MAX;<br>    count–;<br>    return tmp;<br>}</p>
+<p>cond_t empty, fill;<br>mutex_t mutex;</p>
+<p>void <em>producer(void </em>arg) {<br>    int i;<br>    for (i = 0; i &lt; loops; i++) {<br>        Pthread_mutex_lock(&amp;mutex); // p1<br>        while (count == MAX) // p2<br>            Pthread_cond_wait(&amp;empty, &amp;mutex); // p3<br>        put(i); // p4<br>        Pthread_cond_signal(&amp;fill); // p5<br>        Pthread_mutex_unlock(&amp;mutex); // p6<br>    }<br>}</p>
+<p>void <em>consumer(void </em>arg) {<br>    int i;<br>    for (i = 0; i &lt; loops; i++) {<br>        Pthread_mutex_lock(&amp;mutex); // c1<br>        while (count == 0) // c2<br>            Pthread_cond_wait(&amp;fill, &amp;mutex); // c3<br>        int tmp = get(); // c4<br>        Pthread_cond_signal(&amp;empty); // c5<br>        Pthread_mutex_unlock(&amp;mutex); // c6<br>        printf(“%d\n”, tmp);<br>    }<br>}</p>
+<p>notes:<br>1)use while instead of if.  if is incorrect when there are two or more consumers<br>2)use fill &amp; empty instead of a single CV</p>
+<p>Conclusion:<br>锁保证原子性，CV保证顺序</p>
+<p>信号量：Semaphore  互斥锁+CV+count<br>void P(sem_t &amp;sem) {<br>  sem-&gt;count–;<br>  if (sem-&gt;count &lt; 0) {<br>    push(sem-&gt;queue, current);<br>    suspend();<br>  }<br>}<br>void V(sem_t &amp;sem) {<br>  sem-&gt;count++;<br>  if (!empty(sem-&gt;queue)) {<br>    wakeup(pop(sem-&gt;queue));<br>  }<br>}</p>
+<p>•P操作就是从池子里取走一把锁。如果取成功，线程继续执行，如果取失败，就必须等待。<br>•V操作就是把一把锁放进池子里。这时候如果有线程在等锁，那个线程可以取走这把锁执行。</p>
+<p>notes:<br>1)P/V是原子操作<br>2)仅有一个手环(count=1) = 互斥锁<br>3)P = wait; V = signal<br>4)因为计数器的存在，不会发生signal“丢失”</p>
+<p>第三部分 persistence<br>Ch40  File Implementation<br>data structure &amp; access methods</p>
+<p>Ch39 file intro<br>//文件结构体，每个进程的struct proc里都有一项struct file <em>file[NOFILE];<br>struct file {<br>  int ref;<br>  char readable;<br>  char writable;<br>  struct inode </em>ip;<br>  uint off;<br>};</p>
+<p>//open file table   only one in the OS<br>struct {<br>  struct spinlock lock;<br>  struct file file[NFILE];<br>} ftable;</p>
+<p>//directory struct<br>struct dirent {<br>  char d_name[256]; /<em> filename </em>/<br>  ino_t d_ino; /<em> inode number </em>/<br>  off_t d_off; /<em> offset to the next dirent </em>/<br>  unsigned short d_reclen; /<em> length of this record </em>/<br>  unsigned char d_type; /<em> type of file </em>/<br>};</p>
+<p>//hard link<br>ln file1 file2<br>//link file2 to the inode fo file1; both refer to the same file; no copy was made</p>
+<p>When you create a file, you are really doing two things. First, you are<br>making a structure (the inode) that will track virtually all relevant information<br>about the file, including its size, where its blocks are on disk, and<br>so forth. Second, you are linking a human-readable name to that file, and<br>putting that link into a directory.</p>
+<p>//symbolic link/soft link<br>ln -s file1 file2<br>/<em><br>三种文件类型：regular file, directory, symbolic link<br>symbolic link将它的linked-to file的pathname作为它的数据
+</em>/</p>
 
       
     </div>
@@ -329,7 +364,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Daily-Summary/" rel="tag"># Daily Summary</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -342,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/final-exam-explanation/" rel="next" title="最后一次问求期末卷讲解（应该是">
-                <i class="fa fa-chevron-left"></i> 最后一次问求期末卷讲解（应该是
+              <a href="/2019/04/02/19-04-02/" rel="next" title="19-04-02">
+                <i class="fa fa-chevron-left"></i> 19-04-02
               </a>
             
           </div>
@@ -352,8 +387,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/26/string-and-file-funcs/" rel="prev" title="string and file funcs">
-                string and file funcs <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/18/19-4-18/" rel="prev" title="19-4-18">
+                19-4-18 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
